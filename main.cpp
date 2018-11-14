@@ -2,6 +2,7 @@
 
 #include "SDL_Plotter.h"
 #include "Player.h"
+#include "platform.h"
 
 using namespace std;
 
@@ -13,6 +14,7 @@ int main(int argc, char ** argv)
     SDL_Plotter g(windowHeight,windowWidth);
 
     Player mario;
+    Platform block;
 
     bool stopped = false;
 
@@ -49,10 +51,15 @@ int main(int argc, char ** argv)
                 g.plotPixel(col, row, 255, 255, 255);
             }
         }
+
         //draw mario
         mario.draw(g);
-
-
+        block.drawPlatform1(g);
+        block.drawPlatform2(g);
+        block.drawPlatform3(g);
+        block.drawPlatform4(g);
+        block.drawPlatform5(g);
+        block.drawPlatform6(g);
 
         if(g.kbhit()){
             g.getKey();
