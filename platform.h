@@ -15,7 +15,7 @@ public:
     {
         int width = 1000;
         int height = 40;
-        int posX = 580;
+        int posX = 0;
         int posY = 500;
 
         // Draw Loop
