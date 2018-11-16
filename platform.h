@@ -11,12 +11,17 @@ class Platform
 
 
 public:
+
+
     void drawPlatform1 (SDL_Plotter & g)
     {
         int width = 1000;
         int height = 40;
         int posX = 0;
         int posY = 500;
+
+
+
 
         // Draw Loop
         for (int col = posX; col < width + posX; ++col)
@@ -94,6 +99,8 @@ public:
         int posX = 0;
         int posY = 200;
 
+
+
         // Draw Loop
         for (int col = posX; col < width + posX; ++col)
         {
@@ -126,6 +133,10 @@ public:
     }
 
 };
+
+
+
+
 
 
 
