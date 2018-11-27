@@ -3,7 +3,8 @@
 #include "SDL_Plotter.h"
 #include "Player.h"
 #include "platform.h"
-#include "Tutrles.h"
+#include "Movement.h"
+#include "turtles.h"
 
 using namespace std;
 
@@ -11,22 +12,24 @@ int main(int argc, char ** argv)
 {
     const int windowHeight = 600;
     const int windowWidth = 1000;
-
+    int posX = 485;
+    int width = 15;
 
 
 
     SDL_Plotter g(windowHeight,windowWidth);
-    Turtle opponets;
 
     Player mario;
     Platform block;
+    Turtle turt;
 
     bool stopped = false;
 
+
     while (!g.getQuit())
-    {
-
-
+        {
+        // Input
+        mario.moveLeft(-1, 0);
         // Height/Width limiter
         if (g.getKey() == DOWN_ARROW)
         {
@@ -63,8 +66,25 @@ int main(int argc, char ** argv)
             }
         }
 
+            if (g.getKey() == DOWN_ARROW)
+            {
+                turt.moveOpponent(0, 1);
+            }
+            else if (g.getKey() == UP_ARROW)
+            {
+                turt.moveOpponent(0,-1);
+            }
+            else if (g.getKey() == RIGHT_ARROW)
+            {
+                turt.moveOpponent(1, 0);
+            }
+            else if (g.getKey() == LEFT_ARROW)
+            {
+                turt.moveOpponent(-1, 0);
+            }
+
         //draw mario
-        mario.draw(g);
+      //  mario.draw(g);
         block.drawPlatform1(g);
         block.drawPlatform2(g);
         block.drawPlatform3(g);
@@ -72,11 +92,12 @@ int main(int argc, char ** argv)
         block.drawPlatform5(g);
         block.drawPlatform6(g);
 
-        opponets.opponet1(g);
-        opponets.movePlayer(-1, 0);
+        turt.drawOpponent(g);
+        turt.moveLeft(-1, 0);
+        turt.moveOpponent(-1, 0);
 
 
-        if(g.kbhit()){
+            if(g.kbhit()){
             g.getKey();
         }
 
