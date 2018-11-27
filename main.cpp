@@ -3,6 +3,7 @@
 #include "SDL_Plotter.h"
 #include "Player.h"
 #include "platform.h"
+#include "Tutrles.h"
 
 using namespace std;
 
@@ -15,17 +16,16 @@ int main(int argc, char ** argv)
 
 
     SDL_Plotter g(windowHeight,windowWidth);
+    Turtle opponets;
 
     Player mario;
     Platform block;
 
     bool stopped = false;
 
-
     while (!g.getQuit())
     {
 
-        // Input
 
         // Height/Width limiter
         if (g.getKey() == DOWN_ARROW)
@@ -72,6 +72,8 @@ int main(int argc, char ** argv)
         block.drawPlatform5(g);
         block.drawPlatform6(g);
 
+        opponets.opponet1(g);
+        opponets.movePlayer(-1, 0);
 
 
         if(g.kbhit()){

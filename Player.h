@@ -43,7 +43,7 @@ public:
         // posX1 = min (max (posX1 + xOffset, 0), windowWidth - width);
         //posY1 = min (max (posY1 + yOffset, 200), windowHeight - height);
 
-        posX = min(max(posX + xOffset, 300), 1000 - width);
+        posX = min(max(posX + xOffset, 0), 1000 - width);
         posY = min(max(posY + yOffset, 0), 500 - height);
 
     }
@@ -52,7 +52,7 @@ public:
         // posX1 = min (max (posX1 + xOffset, 0), windowWidth - width);
         //posY1 = min (max (posY1 + yOffset, 200), windowHeight - height);
 
-        posX = min(max(posX + xOffset, ), 1000 - width);
+        posX = min(max(posX + xOffset, 0), 1000 - width);
         posY = min(max(posY + yOffset, 0), 500 - height);
 
     }
