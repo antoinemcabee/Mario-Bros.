@@ -6,12 +6,20 @@
 #define MARIO_MOVEMENT_H
 
 
+#include "SDL_Plotter.h"
+#include "platform.h"
+#include "player.h"
+
+using namespace std;
+
 class Movement{
-    int xPoint;
-    int yPoint;
+    int posX = 485;
+
 public:
     void moveLeft(int x, int y){
-        for(int i = 0; i <)
+        for(int i = 0; i < windowWidth; i++){
+            posX--;
+        }
     }
 };
 

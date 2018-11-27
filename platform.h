@@ -12,13 +12,16 @@ class Platform
 
 public:
 
-    //bottom platform
+
     void drawPlatform1 (SDL_Plotter & g)
     {
         int width = 1000;
         int height = 40;
         int posX = 0;
         int posY = 500;
+
+
+
 
         // Draw Loop
         for (int col = posX; col < width + posX; ++col)
@@ -27,10 +30,11 @@ public:
             {
                 g.plotPixel(col, row, 0, 0, 0);
             }
+
         }
+
     }
 
-    //bottom left platform
     void drawPlatform2 (SDL_Plotter & g)
     {
         int width = 300;
@@ -45,10 +49,11 @@ public:
             {
                 g.plotPixel(col, row, 0, 0, 0);
             }
+
         }
+
     }
 
-    //bottom right platform
     void drawPlatform3 (SDL_Plotter & g)
     {
         int width = 300;
@@ -68,7 +73,6 @@ public:
 
     }
 
-    //middle platform
     void drawPlatform4 (SDL_Plotter & g)
     {
         int width = 300;
@@ -83,16 +87,19 @@ public:
             {
                 g.plotPixel(col, row, 0, 0, 0);
             }
+
         }
+
     }
 
-    //top left platform
     void drawPlatform5 (SDL_Plotter & g)
     {
         int width = 300;
         int height = 20;
         int posX = 0;
         int posY = 200;
+
+
 
         // Draw Loop
         for (int col = posX; col < width + posX; ++col)
@@ -101,10 +108,11 @@ public:
             {
                 g.plotPixel(col, row, 0, 0, 0);
             }
+
         }
+
     }
 
-    //top right platform
     void drawPlatform6 (SDL_Plotter & g)
     {
         int width = 300;
@@ -119,7 +127,9 @@ public:
             {
                 g.plotPixel(col, row, 0, 0, 0);
             }
+
         }
+
     }
 
 };

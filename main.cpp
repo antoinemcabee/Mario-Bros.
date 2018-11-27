@@ -84,7 +84,7 @@ int main(int argc, char ** argv)
             }
 
         //draw mario
-      //  mario.draw(g);
+        mario.draw(g);
         block.drawPlatform1(g);
         block.drawPlatform2(g);
         block.drawPlatform3(g);

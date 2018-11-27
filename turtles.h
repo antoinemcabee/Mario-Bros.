@@ -30,6 +30,10 @@ public:
 
     void drawOpponent(SDL_Plotter & g)
     {
+        width = 20;
+        height = 20;
+        posX = 980;
+        posY = 180;
 
         // Draw Loop
         for (int col = posX; col < width + posX; ++col)
