@@ -1,0 +1,5 @@
+  void moveLeft(int x, int y){
+        for(int i = 0; i <= windowWidth; i++){
+            posX--;
+        }
+    }
