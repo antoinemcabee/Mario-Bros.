@@ -2,45 +2,44 @@
 // Created by MCABEE on 11/15/2018.
 //
 
-#ifndef MARIO_TUTRLES_H
-#define MARIO_TUTRLES_H
+#ifndef MARIO_TURTLES_H
+#define MARIO_TURTLES_H
 
 #include "SDL_Plotter.h"
+#include "platform.h"
 
-class Turtle {
-    int width;
-    int height;
-    int posX;
-    int posY;
+using namespace std;
+
+class Turtle
+{
+private:
+    // Rectangle Variables
+    int width = 20;
+    int height = 35;
+    int posX = 980;
+    int posY = 180;
+    int posX1 = 0;
+    int posY1 = 200;
 
 public:
-
     void moveOpponent(int xOffset, int yOffset)
     {
-
         posX = min (max (posX + xOffset, 0), windowWidth - width);
         posY = min (max (posY + yOffset, 0), windowHeight - height);
 
     }
-    void moveLeft(int x, int y){
+    void moveOpponentRight(int x, int y){
 
-        posX--;
+        posX++;
     }
-
-
     void drawOpponent(SDL_Plotter & g)
     {
-        width = 20;
-        height = 20;
-        posX = 980;
-        posY = 180;
-
         // Draw Loop
         for (int col = posX; col < width + posX; ++col)
         {
             for (int row = posY; row < height + posY; ++row)
             {
-                g.plotPixel(col, row, 255, 0, 0);
+                g.plotPixel(col, row, 200, 0, 0);
             }
 
         }
@@ -49,4 +48,4 @@ public:
 
 };
 
-#endif //MARIO_TUTRLES_H
+#endif //MARIO_TURTLES_H

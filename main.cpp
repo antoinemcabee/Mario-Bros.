@@ -21,7 +21,7 @@ int main(int argc, char ** argv)
 
     Player mario;
     Platform block;
-    Turtle turt;
+    Turtle turtle;
 
     bool stopped = false;
 
@@ -29,14 +29,15 @@ int main(int argc, char ** argv)
     while (!g.getQuit())
         {
         // Input
-        mario.moveLeft(-1, 0);
+        mario.movePlayerRight(1, 0);
+        turtle.moveOpponentRight(1, 0);
+
         // Height/Width limiter
         if (g.getKey() == DOWN_ARROW)
         {
            mario.movePlayer(0, 1);
            mario.blockPlayer(0, 1);
            mario.blockPlayer2(0, 1);
-
         }
         else if (g.getKey() == UP_ARROW)
         {
@@ -62,29 +63,13 @@ int main(int argc, char ** argv)
         {
             for (int row = 0; row < windowHeight; ++row)
             {
-                g.plotPixel(col, row, 255, 255, 255);
+                g.plotPixel(col, row, 0, 0, 0);
             }
         }
 
-            if (g.getKey() == DOWN_ARROW)
-            {
-                turt.moveOpponent(0, 1);
-            }
-            else if (g.getKey() == UP_ARROW)
-            {
-                turt.moveOpponent(0,-1);
-            }
-            else if (g.getKey() == RIGHT_ARROW)
-            {
-                turt.moveOpponent(1, 0);
-            }
-            else if (g.getKey() == LEFT_ARROW)
-            {
-                turt.moveOpponent(-1, 0);
-            }
 
         //draw mario
-        mario.draw(g);
+        mario.drawPlayer(g);
         block.drawPlatform1(g);
         block.drawPlatform2(g);
         block.drawPlatform3(g);
@@ -92,9 +77,8 @@ int main(int argc, char ** argv)
         block.drawPlatform5(g);
         block.drawPlatform6(g);
 
-        turt.drawOpponent(g);
-        turt.moveLeft(-1, 0);
-        turt.moveOpponent(-1, 0);
+        turtle.drawOpponent(g);
+
 
 
             if(g.kbhit()){

@@ -16,7 +16,7 @@ public:
     void drawPlatform1 (SDL_Plotter & g)
     {
         int width = 1000;
-        int height = 40;
+        int height = 10;
         int posX = 0;
         int posY = 500;
 
@@ -28,7 +28,7 @@ public:
         {
             for (int row = posY; row < height + posY; ++row)
             {
-                g.plotPixel(col, row, 0, 0, 0);
+                g.plotPixel(col, row, 255, 255, 255);
             }
 
         }
@@ -38,7 +38,7 @@ public:
     void drawPlatform2 (SDL_Plotter & g)
     {
         int width = 300;
-        int height = 20;
+        int height = 10;
         int posX = 0;
         int posY = 400;
 
@@ -47,7 +47,7 @@ public:
         {
             for (int row = posY; row < height + posY; ++row)
             {
-                g.plotPixel(col, row, 0, 0, 0);
+                g.plotPixel(col, row, 255, 255, 255);
             }
 
         }
@@ -57,7 +57,7 @@ public:
     void drawPlatform3 (SDL_Plotter & g)
     {
         int width = 300;
-        int height = 20;
+        int height = 10;
         int posX = 700;
         int posY = 400;
 
@@ -66,7 +66,7 @@ public:
         {
             for (int row = posY; row < height + posY; ++row)
             {
-                g.plotPixel(col, row, 0, 0, 0);
+                g.plotPixel(col, row, 255, 255, 255);
             }
 
         }
@@ -76,7 +76,7 @@ public:
     void drawPlatform4 (SDL_Plotter & g)
     {
         int width = 300;
-        int height = 20;
+        int height = 10;
         int posX = 350;
         int posY = 300;
 
@@ -85,7 +85,7 @@ public:
         {
             for (int row = posY; row < height + posY; ++row)
             {
-                g.plotPixel(col, row, 0, 0, 0);
+                g.plotPixel(col, row, 255, 255, 255);
             }
 
         }
@@ -95,7 +95,7 @@ public:
     void drawPlatform5 (SDL_Plotter & g)
     {
         int width = 300;
-        int height = 20;
+        int height = 10;
         int posX = 0;
         int posY = 200;
 
@@ -106,7 +106,7 @@ public:
         {
             for (int row = posY; row < height + posY; ++row)
             {
-                g.plotPixel(col, row, 0, 0, 0);
+                g.plotPixel(col, row, 255, 255, 255);
             }
 
         }
@@ -116,7 +116,7 @@ public:
     void drawPlatform6 (SDL_Plotter & g)
     {
         int width = 300;
-        int height = 20;
+        int height = 10;
         int posX = 700;
         int posY = 200;
 
@@ -125,7 +125,7 @@ public:
         {
             for (int row = posY; row < height + posY; ++row)
             {
-                g.plotPixel(col, row, 0, 0, 0);
+                g.plotPixel(col, row, 255, 255, 255);
             }
 
         }

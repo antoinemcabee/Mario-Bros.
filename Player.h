@@ -33,14 +33,27 @@ private:
 public:
     void movePlayer(int xOffset, int yOffset)
     {
-
         posX = min (max (posX + xOffset, 0), windowWidth - width);
         posY = min (max (posY + yOffset, 0), windowHeight - height);
 
     }
-    void moveLeft(int x, int y){
+    void movePlayerRight(int x, int y){
 
-            posX--;
+            posX++;
+    }
+    void drawPlayer (SDL_Plotter & g)
+    {
+
+        // Draw Loop
+        for (int col = posX; col < width + posX; ++col)
+        {
+            for (int row = posY; row < height + posY; ++row)
+            {
+                g.plotPixel(col, row, 200, 0, 0);
+            }
+
+        }
+
     }
 
     void blockPlayer(int xOffset, int yOffset) {
@@ -62,19 +75,9 @@ public:
 
     }
 
-    void draw (SDL_Plotter & g)
-    {
-
-        // Draw Loop
-        for (int col = posX; col < width + posX; ++col)
-        {
-            for (int row = posY; row < height + posY; ++row)
-            {
-                g.plotPixel(col, row, 200, 0, 0);
-            }
-
-        }
-
+    void jumpPlayer(int x, int y){
+        posX++;
+        posY++;
     }
 
 };
