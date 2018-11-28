@@ -24,6 +24,8 @@ int main(int argc, char ** argv)
     Turtle turtle;
     Turtle turtle1;
     Coins coin;
+    Coins coin1;
+    Coins coin2;
 
 
     bool stopped = false;
@@ -32,33 +34,25 @@ int main(int argc, char ** argv)
     while (!g.getQuit())
         {
         // Input
-       // mario.movePlayerRight(1, 0);
+        mario.movePlayerRight();
+
         turtle.moveOpponentRight();
         turtle1.moveOpponentLeft();
 
         // Height/Width limiter
-//        if (g.getKey() == DOWN_ARROW)
-//        {
-//           mario.movePlayer(0, 1);
-//        }
-//        else
+
         if (g.getKey() == UP_ARROW)
         {
            mario.movePlayer(0,-1);
-           //mario.fallObject();
-        }
-        else if (g.getKey() == RIGHT_ARROW)
-        {
-           mario.movePlayer(1, 0);
         }
         else if (g.getKey() == LEFT_ARROW)
         {
-           mario.movePlayer(-1, 0);
+           mario.movePlayerLeft();
         }
-//        else if(g.getKey() == ' ') {
-//            mario.fallObject();
-//            mario.blockPlayer(0, 0);
-//        }
+        else if(!g.getKey()) {
+            mario.fallObject();
+            mario.blockPlayer(0, 0);
+        }
 
         // Draw Background fam
         for (int col = 0; col < windowWidth; ++col)
@@ -69,12 +63,6 @@ int main(int argc, char ** argv)
             }
         }
 
-//        while(g.kbhit()){
-//            if(g.getKey() == UP_ARROW){
-//                mario.movePlayer(-20,-20);
-//            }
-//
-//        }
 
 
             //draw mario
@@ -88,12 +76,20 @@ int main(int argc, char ** argv)
 
         turtle.drawOpponent(g);
         turtle1.drawOpponent1(g);
+//      turtle1.blockOpponent(0,0);
 
         coin.drawCoin(g);
+        coin.moveCoinRight();
+        coin.blockCoins(0,0);
+        coin1.drawCoin(g);
+        coin1.moveCoinLeft();
+        coin1.blockCoins(0,0);
+        coin2.drawCoin2(g);
+        coin2.moveCoinSomewhere();
 
 
 
-            if(g.kbhit()){
+        if(g.kbhit()){
             g.getKey();
         }
 

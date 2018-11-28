@@ -25,7 +25,7 @@ private:
     // Rectangle Variables
     int width = 15;
     int height = 35;
-    int posX = 485;
+    int posX = 0;
     int posY = 465;
     int posX1 = 0;
     int posY1 = 200;
@@ -33,13 +33,17 @@ private:
 public:
     void movePlayer(int xOffset, int yOffset)
     {
-        posX = min (max (posX + xOffset, 0), windowWidth - width);
+       // posX = min (max (posX + xOffset, 0), windowWidth - width);
         posY = min (max (posY + yOffset, 0), windowHeight - height);
 
     }
-    void movePlayerRight(int x, int y){
+    void movePlayerRight(){
 
-            posX++;
+            posX += 1;
+    }
+    void movePlayerLeft(){
+
+        posX -= 1.5;
     }
     void drawPlayer (SDL_Plotter & g)
     {
@@ -61,11 +65,9 @@ public:
     }
 
     void blockPlayer(int xOffset, int yOffset) {
-//        posX1 = min (max (posX1 + xOffset, 0), windowWidth - width);
-//        posY1 = min (max (posY1 + yOffset, 200), windowHeight - height);
 
-        posX = min(max(posX + xOffset, 300), 1000 - width);
-        posY = min(max(posY + yOffset, 0), 500 - height);
+       //posX = min(max(posX + xOffset, 0), 1000 - width);
+       posY = min(max(posY + yOffset, 0), 500 - height);
 
 
     }

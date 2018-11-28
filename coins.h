@@ -11,27 +11,71 @@ using namespace std;
 
 class Coins{
 
-private:
-    // Rectangle Variables
+public:
     int width = 10;
     int height = 10;
-    int posX = 200;
+    int posX = 0;
     int posY = 180;
-    int posX1 = 0;
-    int posY1 = 200;
 
-public:
-
-    void moveCoinRight(int x, int y)
+    void moveCoinRight()
     {
         posX++;
+        posY++;
+    }
+    void moveCoinLeft()
+    {
+        posX--;
+        posY++;
+    }
+    void moveCoinSomewhere(){
+        posX++;
+    }
+    void moveCoinElsewhere(){
+        posX--;
+    }
 
-        
+    void blockCoins(int xOffset, int yOffset) {
+        posY = min(max(posY + yOffset, 0), 500 - height);
     }
 
 
     void drawCoin(SDL_Plotter & g)
     {
+        // Draw Loop
+        for (int col = posX; col < width + posX; ++col)
+        {
+            for (int row = posY; row < height + posY; ++row)
+            {
+                g.plotPixel(col, row, 200, 200, 0);
+            }
+
+        }
+
+    }
+
+
+    void drawCoin1(SDL_Plotter & g)
+    {
+        posX = 500;
+        posY = 500;
+
+        // Draw Loop
+        for (int col = posX; col < width + posX; ++col)
+        {
+            for (int row = posY; row < height + posY; ++row)
+            {
+                g.plotPixel(col, row, 200, 200, 0);
+            }
+
+        }
+
+    }
+
+
+    void drawCoin2(SDL_Plotter & g)
+    {
+        posX = 0;
+        posY = 375;
         // Draw Loop
         for (int col = posX; col < width + posX; ++col)
         {

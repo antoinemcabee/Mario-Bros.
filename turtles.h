@@ -20,14 +20,8 @@ public:
         int posX1 = 0;
         int posY1 = 200;
 
-    void moveOpponent(int xOffset, int yOffset)
-    {
 
-        posX = min (max (posX + xOffset, 0), windowWidth - width);
-        posY = min (max (posY + yOffset, 0), windowHeight - height);
-
-    }
-    void moveOpponentRight(int x, int y){
+    void moveOpponentRight(){
 
         posX++;
     }
@@ -38,7 +32,7 @@ public:
         {
             for (int row = posY; row < height + posY; ++row)
             {
-                g.plotPixel(col, row, 200, 0, 0);
+                g.plotPixel(col, row, 0, 150, 0);
             }
 
         }
@@ -60,7 +54,7 @@ public:
         {
             for (int row = posY; row < height + posY; ++row)
             {
-                g.plotPixel(col, row, 200, 0, 0);
+                g.plotPixel(col, row, 0, 150, 0);
             }
 
         }
@@ -71,6 +65,14 @@ public:
         posX--;
     }
 
+
+//    void blockOpponent(int xOffset, int yOffset) {
+//
+//        posX = min(max(posX + xOffset, 0), 1000 - width);
+//        //  posY = min(max(posY + yOffset, 0), 500 - height);
+//
+//
+//    }
 
 };
 
