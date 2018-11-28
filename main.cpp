@@ -5,7 +5,7 @@
 #include "platform.h"
 #include "Movement.h"
 #include "turtles.h"
-
+#include "coins.h"
 using namespace std;
 
 int main(int argc, char ** argv)
@@ -37,23 +37,22 @@ int main(int argc, char ** argv)
 
      
         // Height/Width limiter
-//        if (g.getKey() == DOWN_ARROW)
-//        {
-//           mario.movePlayer(0, 1);
-//        }
-//
-//        else if (g.getKey() == UP_ARROW)
-//        {
-//            mario.movePlayer(0,-1);
-//        }
-//        else if (g.getKey() == RIGHT_ARROW)
-//        {
-//            mario.movePlayer(1, 0);
-//        }
-//        else if (g.getKey() == LEFT_ARROW)
-//        {
-//            mario.movePlayer(-1, 0);
-//        }
+        if (g.getKey() == DOWN_ARROW)
+        {
+           mario.movePlayer(0, 1);
+        }
+        else if (g.getKey() == UP_ARROW)
+        {
+           mario.movePlayer(0,-1);
+        }
+        else if (g.getKey() == RIGHT_ARROW)
+        {
+           mario.movePlayer(1, 0);
+        }
+        else if (g.getKey() == LEFT_ARROW)
+        {
+           mario.movePlayer(-1, 0);
+        }
 
         // Draw Background fam
         for (int col = 0; col < windowWidth; ++col)
