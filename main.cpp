@@ -23,6 +23,7 @@ int main(int argc, char ** argv)
     Platform block;
     Turtle turtle;
     Turtle turtle1;
+    Coins coin;
 
 
     bool stopped = false;
@@ -32,18 +33,19 @@ int main(int argc, char ** argv)
         {
         // Input
        // mario.movePlayerRight(1, 0);
-        turtle.moveOpponentRight(1,0);
+        turtle.moveOpponentRight();
         turtle1.moveOpponentLeft();
 
-     
         // Height/Width limiter
-        if (g.getKey() == DOWN_ARROW)
-        {
-           mario.movePlayer(0, 1);
-        }
-        else if (g.getKey() == UP_ARROW)
+//        if (g.getKey() == DOWN_ARROW)
+//        {
+//           mario.movePlayer(0, 1);
+//        }
+//        else
+        if (g.getKey() == UP_ARROW)
         {
            mario.movePlayer(0,-1);
+           //mario.fallObject();
         }
         else if (g.getKey() == RIGHT_ARROW)
         {
@@ -53,6 +55,10 @@ int main(int argc, char ** argv)
         {
            mario.movePlayer(-1, 0);
         }
+//        else if(g.getKey() == ' ') {
+//            mario.fallObject();
+//            mario.blockPlayer(0, 0);
+//        }
 
         // Draw Background fam
         for (int col = 0; col < windowWidth; ++col)
@@ -63,8 +69,15 @@ int main(int argc, char ** argv)
             }
         }
 
+//        while(g.kbhit()){
+//            if(g.getKey() == UP_ARROW){
+//                mario.movePlayer(-20,-20);
+//            }
+//
+//        }
 
-        //draw mario
+
+            //draw mario
         mario.drawPlayer(g);
         block.drawPlatform1(g);
         block.drawPlatform2(g);
@@ -75,6 +88,8 @@ int main(int argc, char ** argv)
 
         turtle.drawOpponent(g);
         turtle1.drawOpponent1(g);
+
+        coin.drawCoin(g);
 
 
 
