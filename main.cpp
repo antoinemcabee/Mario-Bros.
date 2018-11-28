@@ -22,6 +22,8 @@ int main(int argc, char ** argv)
     Player mario;
     Platform block;
     Turtle turtle;
+    Turtle turtle1;
+
 
     bool stopped = false;
 
@@ -29,34 +31,29 @@ int main(int argc, char ** argv)
     while (!g.getQuit())
         {
         // Input
-        mario.movePlayerRight(1, 0);
-        turtle.moveOpponentRight(1, 0);
+       // mario.movePlayerRight(1, 0);
+        turtle.moveOpponentRight(1,0);
+        turtle1.moveOpponentLeft();
 
+     
         // Height/Width limiter
-        if (g.getKey() == DOWN_ARROW)
-        {
-           mario.movePlayer(0, 1);
-           mario.blockPlayer(0, 1);
-           mario.blockPlayer2(0, 1);
-        }
-        else if (g.getKey() == UP_ARROW)
-        {
-            mario.movePlayer(0,-1);
-            mario.blockPlayer(0, -1);
-            mario.blockPlayer2(0, -1);
-        }
-        else if (g.getKey() == RIGHT_ARROW)
-        {
-            mario.movePlayer(1, 0);
-            mario.blockPlayer(1, 0);
-            mario.blockPlayer2(1, 0);
-        }
-        else if (g.getKey() == LEFT_ARROW)
-        {
-            mario.movePlayer(-1, 0);
-            mario.blockPlayer(-1, 0);
-            mario.blockPlayer2(-1, 0);
-        }
+//        if (g.getKey() == DOWN_ARROW)
+//        {
+//           mario.movePlayer(0, 1);
+//        }
+//
+//        else if (g.getKey() == UP_ARROW)
+//        {
+//            mario.movePlayer(0,-1);
+//        }
+//        else if (g.getKey() == RIGHT_ARROW)
+//        {
+//            mario.movePlayer(1, 0);
+//        }
+//        else if (g.getKey() == LEFT_ARROW)
+//        {
+//            mario.movePlayer(-1, 0);
+//        }
 
         // Draw Background fam
         for (int col = 0; col < windowWidth; ++col)
@@ -78,6 +75,7 @@ int main(int argc, char ** argv)
         block.drawPlatform6(g);
 
         turtle.drawOpponent(g);
+        turtle1.drawOpponent1(g);
 
 
 
