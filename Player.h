@@ -27,13 +27,11 @@ private:
     int height = 35;
     int posX = 0;
     int posY = 0;
-    int posX1 = 0;
-    int posY1 = 200;
+
 
 public:
     void movePlayer(int xOffset, int yOffset)
     {
-       // posX = min (max (posX + xOffset, 0), windowWidth - width);
         posY = min (max (posY + yOffset, 0), windowHeight - height);
 
     }
@@ -66,25 +64,16 @@ public:
         if ((posY + height) == 200 && posX < 300) {
             posY--;
         }
-//        if((posY) == 210 && posX < 300){
-//            posY++;
-//        }
 
         //platform 2
         if ((posY + height) == 400 && posX < 300) {
             posY--;
         }
-//        if((posY) == 410 && posX < 300){
-//            posY++;
-//        }
 
         //platform 6
         if ((posY + height) == 200 && posX > 700) {
             posY--;
         }
-//        if((posY) == 210 && posX > 700){
-//            posY++;
-//        }
 
         //platform 3
         if ((posY + height) == 400 && posX > 700) {
@@ -95,53 +84,29 @@ public:
         if ((posY + height) == 300 && posX < 650 && posX > 350) {
             posY--;
         }
-    }
-//        if((posY) == 210 && posX < 300){
-//            posY++;
-//        }
-//        if((posY) == 210 && posX < 300){
-//            posY++;
-//        }
 
-        //platform
     }
-//    void fallObject(){
-//        if((posY + height) != 200){
-//            if(posX < 300) {
-//                posY++;
-//            }
-//        }
-//    }
-
 
 
     void blockPlayer(int xOffset, int yOffset) {
-
-       //posX = min(max(posX + xOffset, 0), 1000 - width);
-       posY = min(max(posY + yOffset, 0), 500 - height);
-
-
-    }
-
-    void blockPlayer2(int xOffset, int yOffset) {
-        posX1 = min (max (posX1 + xOffset, 0), windowWidth - width);
-        posY1 = min (max (posY1 + yOffset, 200), windowHeight - height);
-
-        posX = min(max(posX + xOffset, 0 ), 1000 - width);
         posY = min(max(posY + yOffset, 0), 500 - height);
+    }
+
+//    array of 2 Output() {
+//        arrary of 2 arr[0] = posx arr[1] = posY
+//                return array
+
+
+    int passXVal(){
+        return posX;
+    }
+
+    int passYVal(){
+        return posY;
 
     }
 
-    int pointCY = posY + 35;
-    int pointCX = posX;
-    int pointBX = posX + 15;
-    int pointBY = posY;
-    int pointDX = posX + 15;
-    int pointDY = posY + 35;
 
-//    void fallObject(){
-//        posY++;
-//    }
 
 };
 

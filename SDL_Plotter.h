@@ -20,7 +20,6 @@
 #include <string.h>
 #include <iostream>
 #include <string>
-#include <string.h>
 #include <map>
 using namespace std;
 

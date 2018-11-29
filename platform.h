@@ -113,18 +113,15 @@ public:
 
     }
 
-    void drawPlatform6 (SDL_Plotter & g)
-    {
+    void drawPlatform6 (SDL_Plotter & g) {
         int width = 300;
         int height = 10;
         int posX = 700;
         int posY = 200;
 
         // Draw Loop
-        for (int col = posX; col < width + posX; ++col)
-        {
-            for (int row = posY; row < height + posY; ++row)
-            {
+        for (int col = posX; col < width + posX; ++col) {
+            for (int row = posY; row < height + posY; ++row) {
                 g.plotPixel(col, row, 255, 255, 255);
             }
 
@@ -132,14 +129,7 @@ public:
 
     }
 
+
 };
-
-
-
-
-
-
-
-
 
 #endif //GROUPPROJECT_PLATFORM_H

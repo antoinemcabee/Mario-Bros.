@@ -15,27 +15,27 @@ public:
     int width = 10;
     int height = 10;
     int posX = 0;
-    int posY = 180;
+    int posY = 100;
 
-    void moveCoinRight()
+    void moveCoinRightDiag()
     {
         posX++;
         posY++;
     }
-    void moveCoinLeft()
+    void moveCoinLeftDiag(int x, int y)
     {
         posX--;
         posY++;
     }
-    void moveCoinSomewhere(){
+    void moveCoinRight(){
         posX++;
     }
-    void moveCoinElsewhere(){
+    void moveCoinLeft(){
         posX--;
     }
 
     void blockCoins(int xOffset, int yOffset) {
-        posY = min(max(posY + yOffset, 0), 500 - height);
+        posY = min(max(posY + yOffset, 0), 495 - height);
     }
 
 
