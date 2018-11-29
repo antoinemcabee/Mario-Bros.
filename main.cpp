@@ -6,6 +6,7 @@
 #include "Movement.h"
 #include "turtles.h"
 #include "coins.h"
+#include "pipes.h"
 using namespace std;
 
 int main(int argc, char ** argv)
@@ -26,6 +27,7 @@ int main(int argc, char ** argv)
     Coins coin;
     Coins coin1;
     Coins coin2;
+    Pipes pipe;
 
 
     bool stopped = false;
@@ -34,10 +36,6 @@ int main(int argc, char ** argv)
     while (!g.getQuit())
         {
         // Input
-        mario.movePlayerRight();
-
-        turtle.moveOpponentRight();
-        turtle1.moveOpponentLeft();
 
         // Height/Width limiter
 
@@ -49,12 +47,16 @@ int main(int argc, char ** argv)
         {
            mario.movePlayerLeft();
         }
+        else if(g.getKey() == RIGHT_ARROW)
+        {
+            mario.movePlayerRight();
+        }
         else if(!g.getKey()) {
             mario.fallObject();
             mario.blockPlayer(0, 0);
         }
 
-        // Draw Background fam
+        // Draw Background
         for (int col = 0; col < windowWidth; ++col)
         {
             for (int row = 0; row < windowHeight; ++row)
@@ -63,29 +65,46 @@ int main(int argc, char ** argv)
             }
         }
 
+        if(g.getKey() == ' '){
+            coin.changeColor(g);
+        }
 
-
-            //draw mario
+        //draw mario
         mario.drawPlayer(g);
+
+        //draw pipes
+        pipe.drawPipeLeft(g);
+        pipe.drawPipeLeftTop(g);
+
+        //draw and move enemy one
+        turtle.drawOpponent(g);
+        turtle.moveOpponentRight();
+
+        //draw and move enemy two
+        turtle1.drawOpponent1(g);
+        turtle1.moveOpponentLeft();
+
+        //draw first coin, move coin and prevent coin from going through a platform
+        coin.drawCoin(g);
+        coin.moveCoinRightDiag();
+        coin.blockCoins(0,0);
+
+        //draw second coin, move coin and prevent coin from going through a platform
+        coin1.drawCoin(g);
+        coin1.moveCoinLeftDiag();
+        coin1.blockCoins(0,0);
+
+        //draw third coin and move coin
+        coin2.drawCoin2(g);
+        coin2.moveCoinLeft();
+
+        //draw platforms
         block.drawPlatform1(g);
         block.drawPlatform2(g);
         block.drawPlatform3(g);
         block.drawPlatform4(g);
         block.drawPlatform5(g);
         block.drawPlatform6(g);
-
-        turtle.drawOpponent(g);
-        turtle1.drawOpponent1(g);
-//      turtle1.blockOpponent(0,0);
-
-        coin.drawCoin(g);
-        coin.moveCoinRight();
-        coin.blockCoins(0,0);
-        coin1.drawCoin(g);
-        coin1.moveCoinLeft();
-        coin1.blockCoins(0,0);
-        coin2.drawCoin2(g);
-        coin2.moveCoinSomewhere();
 
 
 
