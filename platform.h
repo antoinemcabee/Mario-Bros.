@@ -9,30 +9,23 @@
 class Platform
 {
 
-
 public:
-
 
     void drawPlatform1 (SDL_Plotter & g)
     {
         int width = 1000;
-        int height = 10;
+        int height = 70;
         int posX = 0;
         int posY = 500;
-
-
-
 
         // Draw Loop
         for (int col = posX; col < width + posX; ++col)
         {
             for (int row = posY; row < height + posY; ++row)
             {
-                g.plotPixel(col, row, 255, 255, 255);
+                g.plotPixel(col, row, 38, 36, 96);
             }
-
         }
-
     }
 
     void drawPlatform2 (SDL_Plotter & g)
@@ -47,11 +40,9 @@ public:
         {
             for (int row = posY; row < height + posY; ++row)
             {
-                g.plotPixel(col, row, 255, 255, 255);
+                g.plotPixel(col, row, 2, 108, 181);
             }
-
         }
-
     }
 
     void drawPlatform3 (SDL_Plotter & g)
@@ -66,11 +57,9 @@ public:
         {
             for (int row = posY; row < height + posY; ++row)
             {
-                g.plotPixel(col, row, 255, 255, 255);
+                g.plotPixel(col, row, 2, 108, 181);
             }
-
         }
-
     }
 
     void drawPlatform4 (SDL_Plotter & g)
@@ -85,11 +74,9 @@ public:
         {
             for (int row = posY; row < height + posY; ++row)
             {
-                g.plotPixel(col, row, 255, 255, 255);
+                g.plotPixel(col, row, 2, 108, 181);
             }
-
         }
-
     }
 
     void drawPlatform5 (SDL_Plotter & g)
@@ -106,11 +93,9 @@ public:
         {
             for (int row = posY; row < height + posY; ++row)
             {
-                g.plotPixel(col, row, 255, 255, 255);
+                g.plotPixel(col, row, 2, 108, 181);
             }
-
         }
-
     }
 
     void drawPlatform6 (SDL_Plotter & g) {
@@ -122,11 +107,9 @@ public:
         // Draw Loop
         for (int col = posX; col < width + posX; ++col) {
             for (int row = posY; row < height + posY; ++row) {
-                g.plotPixel(col, row, 255, 255, 255);
+                g.plotPixel(col, row, 2, 108, 181);
             }
-
         }
-
     }
 
 

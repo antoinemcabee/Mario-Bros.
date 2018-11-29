@@ -25,7 +25,7 @@ private:
     // Rectangle Variables
     int width = 15;
     int height = 35;
-    int posX = 0;
+    int posX = 500;
     int posY = 0;
 
 
@@ -53,9 +53,7 @@ public:
             {
                 g.plotPixel(col, row, 200, 0, 0);
             }
-
         }
-
     }
 
     void fallObject() {
@@ -89,6 +87,7 @@ public:
 
 
     void blockPlayer(int xOffset, int yOffset) {
+        posX = min(max(posX + yOffset, 0), 1000 - width);
         posY = min(max(posY + yOffset, 0), 500 - height);
     }
 
@@ -105,8 +104,6 @@ public:
         return posY;
 
     }
-
-
 
 };
 

@@ -27,9 +27,7 @@ int main(int argc, char ** argv) {
     Coins coin2;
     Pipes pipe;
 
-
     bool stopped = false;
-
 
     while (!g.getQuit()) {
         // Height/Width limiter
@@ -45,23 +43,17 @@ int main(int argc, char ** argv) {
             mario.blockPlayer(0, 0);
         }
 
-//        if (g.getKey() == UP_ARROW)
-//        {
-//            turtle1.moveOpponentLeft();
-//        }
-//        else if (g.getKey() == LEFT_ARROW)
-//        {
-//            turtle1.moveOpponentLeft();
-//        }
-//        else if(g.getKey() == RIGHT_ARROW)
-//        {
-//            turtle1.moveOpponentRight();
-//
-//        }
-//        else if(!g.getKey()) {
-//            turtle1.fallEnemyLeft();
-//            //mario.blockPlayer(0, 0);
-//        }
+        if (g.getKey() == UP_ARROW) {
+            turtle1.moveOpponentLeft();
+        } else if (g.getKey() == LEFT_ARROW) {
+            turtle1.moveOpponentLeft();
+        } else if (g.getKey() == RIGHT_ARROW) {
+            turtle1.moveOpponentRight();
+
+        } else if (!g.getKey()) {
+            turtle1.fallEnemyLeft();
+            //mario.blockPlayer(0, 0);
+        }
 
         // Draw Background
         for (int col = 0; col < windowWidth; ++col) {
@@ -74,34 +66,41 @@ int main(int argc, char ** argv) {
         mario.drawPlayer(g);
 
 
-//        //draw first coin, move coin and prevent coin from going through a platform
-//        coin.drawCoin(g);
-//        coin.moveCoinRightDiag();
-//        coin.blockCoins(0,0);
-//
-//        //draw second coin, move coin and prevent coin from going through a platform
-//        coin1.drawCoin(g);
-//        coin1.moveCoinLeftDiag(1, 1);
-//        coin1.blockCoins(0,0);
-//
-//        //draw third coin and move coin
-//        coin2.drawCoin2(g);
-//        coin2.moveCoinLeft();
-//        coin2.blockCoins(0,0);
+        //draw first coin, move coin and prevent coin from going through a platform
+        coin.drawCoin(g);
+        coin.moveCoinRightDiag();
+        coin.blockCoins(0, 0);
+
+        //draw second coin, move coin and prevent coin from going through a platform
+        coin1.drawCoin(g);
+        coin1.moveCoinLeftDiag(1, 1);
+        coin1.blockCoins(0, 0);
+        coin1.fallCoinLeft();
+
+        //draw third coin and move coin
+        coin2.drawCoin2(g);
+        coin2.moveCoinLeft();
+        coin2.blockCoins(0, 0);
 
         //draw and move enemy one
         turtle.drawOpponent1(g);
-//        turtle.moveOpponentRight();
+        turtle.moveOpponentRight();
+        turtle.fallEnemy();
         turtle.blockOpponent(0, 0);
 
         //draw and move enemy two
         turtle1.drawOpponent1(g);
-        //turtle1.moveOpponentLeft();
-        turtle.fallEnemy();
+        turtle1.moveOpponentLeft();
+        turtle1.fallEnemy();
+        turtle1.blockOpponent(0,0);
 
         //draw pipe
         pipe.drawPipeLeft(g);
         pipe.drawPipeLeftTop(g);
+        pipe.drawPipeRight(g);
+        pipe.drawPipeRightTop(g);
+        pipe.drawPipeBottomLeft(g);
+        pipe.drawPipeBottomRight(g);
 
         //draw platforms
         block.drawPlatform1(g);
@@ -117,16 +116,10 @@ int main(int argc, char ** argv) {
         turtle.playerXVal(XVal);
         turtle.playerYVal(YVal);
 
-    }
+            if (g.kbhit()) {
+                g.getKey();
+            }
 
-    if (g.kbhit()) {
-
-        if (g.kbhit()) {
-            g.getKey();
+            g.update();
         }
-
-        g.update();
-    }
-
-
 }

@@ -16,8 +16,8 @@ class Turtle
 private:
     int width = 20;
     int height = 20;
-    int posX = 970; //cant be set
-    int posY = 380; // same
+    int posX = 1000; //cant be set
+    int posY = 185; // same
 
 public:
 
@@ -56,11 +56,9 @@ public:
         } else if ((posY + height) >= 200 && posX <= 700) {
             posY++;
         }
-
-
     }
 
-
+    //does not do anything (11/29/18 - 2:10PM)
 //    void drawOpponent(SDL_Plotter & g)
 //    {
 //        // Draw Loop
@@ -68,7 +66,7 @@ public:
 //        {
 //            for (int row = posY; row < height + posY; ++row)
 //            {
-//                g.plotPixel(col, row, 0, 150, 0);
+//                g.plotPixel(col, row, 109, 201, 147);
 //            }
 //
 //        }
@@ -82,31 +80,22 @@ public:
         //int posX1 = 0;
         //int posY1M= 200;
 
-        // Draw Loop
+        //Draw Loop
         for (int col = posX; col < width + posX; ++col)
         {
             for (int row = posY; row < height + posY; ++row)
             {
-                g.plotPixel(col, row, 0, 150, 0);
+                g.plotPixel(col, row, 109, 201, 147);
             }
-
         }
-
     }
 
     void blockOpponent(int xOffset, int yOffset) {
+        //posX = min(max(posX + yOffset, 0), 1000 - width);
         posY = min(max(posY + yOffset, 0), 500 - height);
     }
 
-//    CRASHING (INT , INT ) {
-//
-//
-//    }
-//
 
-
-
-//
 //    void moveOpponentRight(){
 //
 //        posX++;
@@ -118,15 +107,15 @@ public:
 //        {
 //            for (int row = posY; row < height + posY; ++row)
 //            {
-//                g.plotPixel(col, row, 0, 150, 0);
+//                g.plotPixel(col, row, 109, 201, 147);
 //            }
 //
 //        }
 //
 //    }
-//
-//
-//
+
+
+
 //  void drawOpponent1(SDL_Plotter & g)
 //    {
 //        int posY = 380;
@@ -138,61 +127,44 @@ public:
 //        {
 //            for (int row = posY; row < height + posY; ++row)
 //            {
-//                g.plotPixel(col, row, 0, 150, 0);
+//                g.plotPixel(col, row, 109, 201, 147);
 //            }
 //
 //        }
 //
 //    }
-//
-//    void fall(){
-//        posY++;
-//    }
-//
-//    void moveOpponentLeft(){
-//        posX--;
-//    }
-//    void blockOpponent(int xOffset, int yOffset) {
-//
-//        posY = min(max(posY + yOffset, 0), 395 - (height + 3));
-//
-//    }
-//    void fallEnemyLeft() {
-//        posY++;
-//        //platform 5
-//        if ((posY + height) == 200 && posX < 300) {
-//            posY--;
-//        }
-////        if((posY) == 210 && posX < 300){
-////            posY++;
-////        }
-//
-//        //platform 2
-//        if ((posY + height) == 400 && posX < 300) {
-//            posY--;
-//        }
-////        if((posY) == 410 && posX < 300){
-////            posY++;
-////        }
-//
-//        //platform 6
-//        if ((posY + height) == 200 && posX > 700) {
-//            posY--;
-//        }
-////        if((posY) == 210 && posX > 700){
-////            posY++;
-////        }
-//
-//        //platform 3
-//        if ((posY + height) == 400 && posX > 700) {
-//            posY--;
-//        }
-//
-//        //platform 4
-//        if ((posY + height) == 300 && posX < 650 && posX > 350) {
-//            posY--;
-//        }
-//    }
+
+
+    void fallEnemyLeft() {
+        posY++;
+        //platform 5
+        if ((posY + height) == 200 && posX < 300) {
+            posY--;
+        }
+
+
+        //platform 2
+        if ((posY + height) == 400 && posX < 300) {
+            posY--;
+        }
+
+
+        //platform 6
+        if ((posY + height) == 200 && posX > 700) {
+            posY--;
+        }
+
+
+        //platform 3
+        if ((posY + height) == 400 && posX > 700) {
+            posY--;
+        }
+
+        //platform 4
+        if ((posY + height) == 300 && posX < 650 && posX > 350) {
+            posY--;
+        }
+    }
 
 };
 

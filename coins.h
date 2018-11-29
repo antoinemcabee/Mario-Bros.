@@ -35,7 +35,7 @@ public:
     }
 
     void blockCoins(int xOffset, int yOffset) {
-        posY = min(max(posY + yOffset, 0), 495 - height);
+        posY = min(max(posY + yOffset, 0), 485 - height);
     }
 
 
@@ -48,9 +48,7 @@ public:
             {
                 g.plotPixel(col, row, 200, 200, 0);
             }
-
         }
-
     }
 
 
@@ -66,16 +64,14 @@ public:
             {
                 g.plotPixel(col, row, 200, 200, 0);
             }
-
         }
-
     }
 
 
     void drawCoin2(SDL_Plotter & g)
     {
-        posX = 0;
-        posY = 375;
+        //posX = 0;
+        //posY = 375;
         // Draw Loop
         for (int col = posX; col < width + posX; ++col)
         {
@@ -83,14 +79,42 @@ public:
             {
                 g.plotPixel(col, row, 200, 200, 0);
             }
+        }
+    }
 
+
+    void fallCoinLeft() {
+        posY++;
+        //platform 5
+        if ((posY + height) == 200 && posX < 300) {
+            posY--;
         }
 
+
+        //platform 2
+        if ((posY + height) == 400 && posX < 300) {
+            posY--;
+        }
+
+
+        //platform 6
+        if ((posY + height) == 200 && posX > 700) {
+            posY--;
+        }
+
+
+        //platform 3
+        if ((posY + height) == 400 && posX > 700) {
+            posY--;
+        }
+
+        //platform 4
+        if ((posY + height) == 300 && posX < 650 && posX > 350) {
+            posY--;
+        }
     }
 
 };
-
-
 
 
 
