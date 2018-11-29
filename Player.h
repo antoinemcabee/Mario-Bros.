@@ -26,7 +26,7 @@ private:
     int width = 15;
     int height = 35;
     int posX = 0;
-    int posY = 465;
+    int posY = 0;
     int posX1 = 0;
     int posY1 = 200;
 
@@ -60,9 +60,60 @@ public:
 
     }
 
-    void fallObject(){
+    void fallObject() {
         posY++;
+        //platform 5
+        if ((posY + height) == 200 && posX < 300) {
+            posY--;
+        }
+//        if((posY) == 210 && posX < 300){
+//            posY++;
+//        }
+
+        //platform 2
+        if ((posY + height) == 400 && posX < 300) {
+            posY--;
+        }
+//        if((posY) == 410 && posX < 300){
+//            posY++;
+//        }
+
+        //platform 6
+        if ((posY + height) == 200 && posX > 700) {
+            posY--;
+        }
+//        if((posY) == 210 && posX > 700){
+//            posY++;
+//        }
+
+        //platform 3
+        if ((posY + height) == 400 && posX > 700) {
+            posY--;
+        }
+
+        //platform 4
+        if ((posY + height) == 300 && posX < 650 && posX > 350) {
+            posY--;
+        }
     }
+//        if((posY) == 210 && posX < 300){
+//            posY++;
+//        }
+//        if((posY) == 210 && posX < 300){
+//            posY++;
+//        }
+
+        //platform
+    }
+//    void fallObject(){
+//        if((posY + height) != 200){
+//            if(posX < 300) {
+//                posY++;
+//            }
+//        }
+//    }
+
+
 
     void blockPlayer(int xOffset, int yOffset) {
 
@@ -81,10 +132,16 @@ public:
 
     }
 
-    void jumpPlayer(int x, int y){
-        posX++;
-        posY++;
-    }
+    int pointCY = posY + 35;
+    int pointCX = posX;
+    int pointBX = posX + 15;
+    int pointBY = posY;
+    int pointDX = posX + 15;
+    int pointDY = posY + 35;
+
+//    void fallObject(){
+//        posY++;
+//    }
 
 };
 
