@@ -1,0 +1,6 @@
+int pointCY = posY + 35;
+int pointCX = posX;
+int pointBX = posX + 15;
+int pointBY = posY;
+int pointDX = posX + 15;
+int point DY = posY + 35;
