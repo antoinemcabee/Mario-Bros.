@@ -40,11 +40,10 @@ public:
     }
     void moveOpponentLeft(){
 
-        posX -= 1.5;
+        posX -= 1;
     }
 
     void fallEnemy() {
-        //posY++;
         posX--;
         //platform 6 <-
         if ((posY + height) >= 400 && posX < 700) {
@@ -58,22 +57,8 @@ public:
         }
     }
 
-    //does not do anything (11/29/18 - 2:10PM)
-//    void drawOpponent(SDL_Plotter & g)
-//    {
-//        // Draw Loop
-//        for (int col = posX; col < width + posX; ++col)
-//        {
-//            for (int row = posY; row < height + posY; ++row)
-//            {
-//                g.plotPixel(col, row, 109, 201, 147);
-//            }
-//
-//        }
-//
-//    }
 
-
+    //Draws first turtle
     void drawOpponent1(SDL_Plotter & g)
     {
         //int posY = 380;
@@ -90,49 +75,11 @@ public:
         }
     }
 
+    //Restricts turtle
     void blockOpponent(int xOffset, int yOffset) {
         //posX = min(max(posX + yOffset, 0), 1000 - width);
         posY = min(max(posY + yOffset, 0), 500 - height);
     }
-
-
-//    void moveOpponentRight(){
-//
-//        posX++;
-//    }
-//    void drawOpponent(SDL_Plotter & g)
-//    {
-//        // Draw Loop
-//        for (int col = posX; col < width + posX; ++col)
-//        {
-//            for (int row = posY; row < height + posY; ++row)
-//            {
-//                g.plotPixel(col, row, 109, 201, 147);
-//            }
-//
-//        }
-//
-//    }
-
-
-
-//  void drawOpponent1(SDL_Plotter & g)
-//    {
-//        int posY = 380;
-//        int posX1 = 0;
-//        int posY1 = 200;
-//
-//        // Draw Loop
-//        for (int col = posX; col < width + posX; ++col)
-//        {
-//            for (int row = posY; row < height + posY; ++row)
-//            {
-//                g.plotPixel(col, row, 109, 201, 147);
-//            }
-//
-//        }
-//
-//    }
 
 
     void fallEnemyLeft() {

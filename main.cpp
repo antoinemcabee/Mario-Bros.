@@ -18,6 +18,7 @@ int main(int argc, char ** argv) {
 
     SDL_Plotter g(windowHeight, windowWidth);
 
+    //Class objects
     Player mario;
     Platform block;
     Turtle turtle;
@@ -29,30 +30,22 @@ int main(int argc, char ** argv) {
 
     bool stopped = false;
 
+    //While loop for program running
     while (!g.getQuit()) {
         // Height/Width limiter
 
         if (g.getKey() == UP_ARROW) {
             mario.movePlayer(0, -1);
+
         } else if (g.getKey() == LEFT_ARROW) {
             mario.movePlayerLeft();
+            mario.fallObject();
         } else if (g.getKey() == RIGHT_ARROW) {
             mario.movePlayerRight();
+            mario.fallObject();
         } else if (!g.getKey()) {
             mario.fallObject();
             mario.blockPlayer(0, 0);
-        }
-
-        if (g.getKey() == UP_ARROW) {
-            turtle1.moveOpponentLeft();
-        } else if (g.getKey() == LEFT_ARROW) {
-            turtle1.moveOpponentLeft();
-        } else if (g.getKey() == RIGHT_ARROW) {
-            turtle1.moveOpponentRight();
-
-        } else if (!g.getKey()) {
-            turtle1.fallEnemyLeft();
-            //mario.blockPlayer(0, 0);
         }
 
         // Draw Background
@@ -71,15 +64,16 @@ int main(int argc, char ** argv) {
         coin.moveCoinRightDiag();
         coin.blockCoins(0, 0);
 
+
         //draw second coin, move coin and prevent coin from going through a platform
         coin1.drawCoin(g);
-        coin1.moveCoinLeftDiag(1, 1);
         coin1.blockCoins(0, 0);
         coin1.fallCoinLeft();
+        coin1.moveCoinLeftDiag(1, 1);
 
         //draw third coin and move coin
         coin2.drawCoin2(g);
-        coin2.moveCoinLeft();
+        coin2.moveCoinLeftDiag(1, 1);
         coin2.blockCoins(0, 0);
 
         //draw and move enemy one
@@ -110,6 +104,7 @@ int main(int argc, char ** argv) {
         block.drawPlatform5(g);
         block.drawPlatform6(g);
 
+        //
         int XVal = mario.passXVal();
         int YVal = mario.passYVal();
 

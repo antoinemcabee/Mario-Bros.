@@ -30,19 +30,27 @@ private:
 
 
 public:
+
+    //Moves player
     void movePlayer(int xOffset, int yOffset)
     {
         posY = min (max (posY + yOffset, 0), windowHeight - height);
 
     }
+
+    //Moves player right
     void movePlayerRight(){
 
             posX += 1;
     }
+
+    //Moves player left
     void movePlayerLeft(){
 
-        posX -= 1.5;
+        posX -= 1;
     }
+
+    //Draws player
     void drawPlayer (SDL_Plotter & g)
     {
 
@@ -56,6 +64,7 @@ public:
         }
     }
 
+    //Makes player fall
     void fallObject() {
         posY++;
         //platform 5
@@ -69,33 +78,36 @@ public:
         }
 
         //platform 6
-        if ((posY + height) == 200 && posX > 700) {
+        if ((posY + height) == 200 && posX > 685) {
             posY--;
         }
 
         //platform 3
-        if ((posY + height) == 400 && posX > 700) {
+        if ((posY + height) == 400 && posX > 685) {
             posY--;
         }
 
         //platform 4
-        if ((posY + height) == 300 && posX < 650 && posX > 350) {
+        if ((posY + height) == 300 && posX < 650 && posX > 335) {
+            posY--;
+        }
+
+        //platform 1
+        if ((posY + height) == 500)
+        {
             posY--;
         }
 
     }
 
 
+    //Restricts player
     void blockPlayer(int xOffset, int yOffset) {
         posX = min(max(posX + yOffset, 0), 1000 - width);
         posY = min(max(posY + yOffset, 0), 500 - height);
     }
 
-//    array of 2 Output() {
-//        arrary of 2 arr[0] = posx arr[1] = posY
-//                return array
-
-
+    //Passes player values
     int passXVal(){
         return posX;
     }

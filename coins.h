@@ -14,26 +14,24 @@ class Coins{
 public:
     int width = 10;
     int height = 10;
-    int posX = 0;
-    int posY = 100;
+    int posX = 100;
+    int posY = 180;
 
+    //Moves coin to the right diagonally
     void moveCoinRightDiag()
     {
         posX++;
         posY++;
     }
+
+    //Moves player to the left diagonally
     void moveCoinLeftDiag(int x, int y)
     {
         posX--;
         posY++;
     }
-    void moveCoinRight(){
-        posX++;
-    }
-    void moveCoinLeft(){
-        posX--;
-    }
 
+    //Restricts the
     void blockCoins(int xOffset, int yOffset) {
         posY = min(max(posY + yOffset, 0), 485 - height);
     }

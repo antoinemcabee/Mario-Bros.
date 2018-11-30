@@ -6,10 +6,12 @@
 #define MARIO_PIPES_H
 #include "SDL_Plotter.h"
 
+//draws pipe class
 class Pipes {
 
 public:
 
+    //Draws pipe
     void drawPipeLeft(SDL_Plotter &g) {
         int width = 10;
         int height = 100;
@@ -23,7 +25,7 @@ public:
             }
         }
     }
-
+    //Draws pipe
     void drawPipeLeftTop(SDL_Plotter &g) {
         int width = 50;
         int height = 70;

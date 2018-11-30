@@ -11,6 +11,7 @@ class Platform
 
 public:
 
+    //Draws platform
     void drawPlatform1 (SDL_Plotter & g)
     {
         int width = 1000;
@@ -28,6 +29,7 @@ public:
         }
     }
 
+    //Draws platform
     void drawPlatform2 (SDL_Plotter & g)
     {
         int width = 300;
@@ -45,6 +47,7 @@ public:
         }
     }
 
+    //Draws platform
     void drawPlatform3 (SDL_Plotter & g)
     {
         int width = 300;
@@ -62,6 +65,7 @@ public:
         }
     }
 
+    //Draws platform
     void drawPlatform4 (SDL_Plotter & g)
     {
         int width = 300;
@@ -79,6 +83,7 @@ public:
         }
     }
 
+    //Draws platform
     void drawPlatform5 (SDL_Plotter & g)
     {
         int width = 300;
@@ -98,6 +103,7 @@ public:
         }
     }
 
+    //Draws platform
     void drawPlatform6 (SDL_Plotter & g) {
         int width = 300;
         int height = 10;
