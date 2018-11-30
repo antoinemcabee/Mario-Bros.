@@ -31,12 +31,13 @@ public:
         posY++;
     }
 
-    //Restricts the
+    //Restricts the coins
     void blockCoins(int xOffset, int yOffset) {
         posY = min(max(posY + yOffset, 0), 485 - height);
     }
 
 
+    //Draws coins
     void drawCoin(SDL_Plotter & g)
     {
         // Draw Loop
@@ -49,7 +50,7 @@ public:
         }
     }
 
-
+    //Draws coin
     void drawCoin1(SDL_Plotter & g)
     {
         posX = 500;
@@ -65,7 +66,7 @@ public:
         }
     }
 
-
+    //Draws coin
     void drawCoin2(SDL_Plotter & g)
     {
         //posX = 0;
@@ -80,7 +81,7 @@ public:
         }
     }
 
-
+    //Makes coins fall
     void fallCoinLeft() {
         posY++;
         //platform 5
